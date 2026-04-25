@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import QRCode from 'react-qr-code';
 import { QrCode, ArrowRight, Layout, SearchCode, MapPin, X, Lock, Unlock, ExternalLink, User, Phone, Mail, Download } from 'lucide-react';
 
 const PREDEFINED_PROJECTS = [
@@ -282,12 +281,10 @@ export default function App() {
                   <div className="bg-slate-50 p-6 md:p-8 rounded-3xl mb-8 border-2 border-dashed border-slate-200 group-hover:border-emerald-300 transition-colors relative">
                     <div className="w-full aspect-square bg-white border-[12px] border-white shadow-inner flex items-center justify-center overflow-hidden rounded-xl p-2 md:p-4">
                       <div className="w-full h-full group-hover:scale-[1.03] transition-transform duration-500">
-                        <QRCode
-                          value="tel:+918333968663"
-                          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                          viewBox={`0 0 256 256`}
-                          fgColor="#0f172a"
-                          bgColor="#ffffff"
+                        <img 
+                          src="https://quickchart.io/qr?text=tel:%2B918333968663&light=ffffff&dark=0f172a&size=300&margin=0"
+                          alt="Contact Details QR Code" 
+                          className="w-full h-full object-contain mx-auto"
                         />
                       </div>
                     </div>
@@ -319,7 +316,7 @@ export default function App() {
                 >
                   {/* Logo Background with 75% transparency (opacity 25%) */}
                   <div 
-                    className="absolute inset-0 z-0 opacity-25 bg-center bg-no-repeat bg-cover"
+                    className="absolute inset-0 z-0 opacity-25 bg-center bg-no-repeat bg-contain"
                     style={{ backgroundImage: "url('/logo.png')" }}
                   />
                   
