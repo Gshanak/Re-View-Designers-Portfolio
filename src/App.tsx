@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import QRCode from 'react-qr-code';
 import { QrCode, ArrowRight, Layout, SearchCode, MapPin, X, Lock, Unlock, ExternalLink, User, Phone, Mail, Download } from 'lucide-react';
 
 const PREDEFINED_PROJECTS = [
@@ -73,7 +74,7 @@ export default function App() {
           backgroundImage: "url('/logo.png')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "contain",
+          backgroundSize: "80%",
         }}
       />
       {/* Header */}
@@ -279,12 +280,16 @@ export default function App() {
                   className="cursor-pointer group block"
                 >
                   <div className="bg-slate-50 p-6 md:p-8 rounded-3xl mb-8 border-2 border-dashed border-slate-200 group-hover:border-emerald-300 transition-colors relative">
-                    <div className="w-full aspect-square bg-white border-[12px] border-white shadow-inner flex items-center justify-center overflow-hidden rounded-xl">
-                      <img 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent("tel:+918333968663")}&color=0f172a&bgcolor=ffffff`}
-                        alt="Contact Details QR Code" 
-                        className="w-full h-full object-contain mx-auto mix-blend-multiply group-hover:scale-[1.03] transition-transform duration-500"
-                      />
+                    <div className="w-full aspect-square bg-white border-[12px] border-white shadow-inner flex items-center justify-center overflow-hidden rounded-xl p-2 md:p-4">
+                      <div className="w-full h-full group-hover:scale-[1.03] transition-transform duration-500">
+                        <QRCode
+                          value="tel:+918333968663"
+                          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                          viewBox={`0 0 256 256`}
+                          fgColor="#0f172a"
+                          bgColor="#ffffff"
+                        />
+                      </div>
                     </div>
                     <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl">
                       <span className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full font-semibold text-emerald-600 shadow-lg shadow-black/5">
