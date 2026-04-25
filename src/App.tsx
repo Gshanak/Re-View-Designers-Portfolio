@@ -397,7 +397,43 @@ export default function App() {
                 <div className="w-16 h-16 bg-slate-50 flex items-center justify-center rounded-[20px] mx-auto mb-6 text-slate-900">
                   {isAdminLoggedIn ? <Unlock className="w-8 h-8" strokeWidth={2.5} /> : <Lock className="w-8 h-8" strokeWidth={2.5} />}
                 </div>
-                <h3 className="text-3xl font-bold tracking-tight mb-2 text-slate-900">Admin Portal</h3>
+                <h3 className=import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { QrCode, ArrowRight, Layout, SearchCode, MapPin, X, Lock, Unlock, ExternalLink, User, Phone, Mail, Download } from 'lucide-react';
+
+const PREDEFINED_PROJECTS = [
+  {
+    id: 1,
+    title: "The PEARL Function Hall",
+    niche: "Function Hall",
+    rating: "4.7 ⭐",
+    image: "/pearl.jpg", // Map background
+    mapsUrl: "https://www.google.com/maps/search/The+PEARL+Function+Hall+Srikakulam",
+  },
+  {
+    id: 2,
+    title: "Amma Nanna Ladies Hostel",
+    niche: "Hospitality",
+    rating: "4.5 ⭐",
+    image: "/amma-nanna.jpg", // Map background
+    mapsUrl: "https://www.google.com/maps/search/Amma+Nanna+Ladies+Hostel+Srikakulam",
+  }
+];
+
+const SERVICES = [
+  {
+    title: "Landing Pages",
+    description: "High-converting, mobile-optimized landing pages that tell your brand's story.",
+    icon: Layout,
+  },
+  {
+    title: "Full-Stack Tools",
+    description: "Custom digital tools to automate your workflow and manage operations.",
+    icon: SearchCode,
+  },
+  {
+    title: "Maps SEO",
+"text-3xl font-bold tracking-tight mb-2 text-slate-900">Admin Portal</h3>
                 <p className="text-slate-500 font-medium">Manage agency projects.</p>
               </div>
 
