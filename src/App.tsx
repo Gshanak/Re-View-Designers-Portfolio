@@ -267,12 +267,12 @@ export default function App() {
               exit={{ scale: 0.95, opacity: 0, y: 10 }}
               transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-[420px]"
+              className="relative w-full max-w-[420px] grid"
               style={{ transformStyle: "preserve-3d" }}
             >
               {/* FRONT: QR CODE */}
               <div 
-                className="bg-white rounded-[48px] p-8 md:p-12 w-full text-center shadow-2xl relative"
+                className="bg-white rounded-[32px] md:rounded-[48px] p-6 md:p-12 w-full text-center shadow-2xl [grid-area:1/1]"
                 style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
               >
                 <div 
@@ -310,49 +310,49 @@ export default function App() {
 
               {/* BACK: CONTACT DETAILS */}
               <div 
-                className="bg-white rounded-[48px] p-8 md:p-12 w-full text-center shadow-2xl absolute inset-0"
+                className="bg-white rounded-[32px] md:rounded-[48px] p-6 md:p-12 w-full text-center shadow-2xl [grid-area:1/1]"
                 style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
               >
                 <a 
                   href="tel:+918333968663"
-                  className="cursor-pointer group block relative overflow-hidden rounded-3xl bg-slate-50 border-2 border-slate-200 hover:border-emerald-400 transition-all shadow-lg hover:shadow-xl text-left p-8 mb-8"
+                  className="cursor-pointer group block relative overflow-hidden rounded-3xl bg-slate-50 border-2 border-slate-200 hover:border-emerald-400 transition-all shadow-lg hover:shadow-xl text-left p-5 md:p-8 mb-6 md:mb-8"
                 >
                   {/* Logo Background with 75% transparency (opacity 25%) */}
                   <div 
-                    className="absolute inset-0 z-0 opacity-25 bg-center bg-no-repeat bg-contain"
+                    className="absolute inset-0 z-0 opacity-25 bg-center bg-no-repeat bg-cover"
                     style={{ backgroundImage: "url('/logo.png')" }}
                   />
                   
                   <div className="relative z-10 flex flex-col items-center text-center">
-                    <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 shadow-md overflow-hidden border-4 border-emerald-100">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 shadow-md overflow-hidden border-4 border-emerald-100">
                       {!logoError ? (
                         <img 
                           src="/logo.png" 
                           alt="Re-View Designers Logo" 
-                          className="w-full h-full object-contain p-2"
+                          className="w-full h-full object-cover p-1"
                           onError={() => setLogoError(true)}
                         />
                       ) : (
                         <div className="w-full h-full bg-emerald-50 flex items-center justify-center">
-                          <User className="w-10 h-10 text-emerald-600" />
+                          <User className="w-8 h-8 md:w-10 md:h-10 text-emerald-600" />
                         </div>
                       )}
                     </div>
-                    <h2 className="text-2xl font-bold text-slate-900 mb-1">Shanak Ganta</h2>
-                    <p className="text-emerald-600 font-bold mb-6 tracking-wide text-sm">RE-VIEW DESIGNERS</p>
+                    <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-0.5 md:mb-1">Shanak Ganta</h2>
+                    <p className="text-emerald-600 font-bold mb-4 md:mb-6 tracking-wide text-xs md:text-sm">RE-VIEW DESIGNERS</p>
                     
-                    <div className="w-full space-y-3">
-                      <div className="flex items-center gap-3 bg-white/80 p-3 rounded-xl border border-slate-100 backdrop-blur-sm group-hover:border-emerald-200 transition-colors">
-                        <Phone className="w-4 h-4 text-emerald-500" />
-                        <span className="text-slate-700 font-medium text-sm">+91 83339 68663</span>
+                    <div className="w-full space-y-2 md:space-y-3">
+                      <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 bg-white/90 p-2.5 md:p-3 rounded-xl border border-slate-100 backdrop-blur-sm group-hover:border-emerald-200 transition-colors">
+                        <Phone className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                        <span className="text-slate-800 font-bold text-sm md:text-sm whitespace-nowrap">+91 83339 68663</span>
                       </div>
-                      <div className="flex items-center gap-3 bg-white/80 p-3 rounded-xl border border-slate-100 backdrop-blur-sm text-left group-hover:border-emerald-200 transition-colors">
+                      <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 bg-white/90 p-2.5 md:p-3 rounded-xl border border-slate-100 backdrop-blur-sm group-hover:border-emerald-200 transition-colors overflow-hidden">
                         <Mail className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                        <span className="text-slate-700 font-medium text-xs break-all">shanakganta@gmail.com</span>
+                        <span className="text-slate-800 font-bold text-xs md:text-sm truncate">shanakganta@gmail.com</span>
                       </div>
                     </div>
                     
-                    <div className="mt-6 flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-full font-bold group-hover:bg-emerald-600 group-hover:scale-105 transition-all shadow-lg shadow-emerald-500/30">
+                    <div className="mt-5 md:mt-6 flex items-center gap-2 bg-emerald-500 text-white px-6 py-2.5 md:py-3 rounded-full font-bold group-hover:bg-emerald-600 group-hover:scale-105 transition-all shadow-lg shadow-emerald-500/30">
                       <Phone className="w-4 h-4 fill-current" />
                       Call Now
                     </div>
